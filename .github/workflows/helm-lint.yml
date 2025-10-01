@@ -1,14 +1,15 @@
 ---
 name: Helm lint
 
-#
-# Documentation:
-# https://help.github.com/en/articles/workflow-syntax-for-github-actions
-#
+on:
+  push:
+    branches: ["main"]
+    tags: ["v*.*.*"]
+  pull_request:
+    branches: ["main"]
 
-permissions: read-all
-
-on: [push, pull_request]
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -18,11 +19,13 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
+        with:
+          persist-credentials: false
 
       - name: Setup helm
-        uses: azure/setup-helm@v4
+        uses: azure/setup-helm@1a275c3b69536ee54be43f2070a358922e12c8d4 # v4.3.1
         with:
-          version: 'v3.14.0'
+          version: "v3.14.0"
 
       - name: Run make helmlint
         run: |

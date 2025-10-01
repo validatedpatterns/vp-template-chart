@@ -37,12 +37,7 @@ test: helm-lint helm-unittest ## Runs helm lint and unit tests
 super-linter: ## Runs super linter locally
 	rm -rf .mypy_cache
 	podman run -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true	\
-					-e VALIDATE_JSON_PRETTIER=false \
-					-e VALIDATE_KUBERNETES_KUBECONFORM=false \
-					-e VALIDATE_MARKDOWN=false \
-					-e VALIDATE_MARKDOWN_PRETTIER=false \
-					-e VALIDATE_YAML_PRETTIER=false \
-					-e VALIDATE_YAML=false \
+					-e VALIDATE_BIOME_FORMAT=false \
 					-v $(PWD):/tmp/lint:rw,z \
 					-w /tmp/lint \
-					ghcr.io/super-linter/super-linter:slim-v7
+					ghcr.io/super-linter/super-linter:slim-v8
