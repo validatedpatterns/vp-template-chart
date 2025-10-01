@@ -32,3 +32,5 @@ jobs:
     uses: validatedpatterns/helm-charts/.github/workflows/update-helm-repo.yml@b07b2dd0198770abef2a3da1aa022e188d376d5d # September 8, 2025
     permissions:
       contents: read
+    secrets:
+      CHARTS_REPOS_TOKEN: ${{ secrets.CHARTS_REPOS_TOKEN }}
