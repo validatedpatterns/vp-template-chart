@@ -23,13 +23,13 @@ permissions:
 
 jobs:
   helmlint:
-    uses: validatedpatterns/helm-charts/.github/workflows/helmlint.yml@b07b2dd0198770abef2a3da1aa022e188d376d5d # September 8, 2025
+    uses: validatedpatterns/helm-charts/.github/workflows/helmlint.yml@69fd10ef9199eecd093fca715ae9765c78750efc # October 6, 2025
     permissions:
       contents: read
 
   update-helm-repo:
     needs: [helmlint]
-    uses: validatedpatterns/helm-charts/.github/workflows/update-helm-repo.yml@b07b2dd0198770abef2a3da1aa022e188d376d5d # September 8, 2025
+    uses: validatedpatterns/helm-charts/.github/workflows/update-helm-repo.yml@69fd10ef9199eecd093fca715ae9765c78750efc # October 6, 2025
     permissions:
       contents: read
     secrets:
