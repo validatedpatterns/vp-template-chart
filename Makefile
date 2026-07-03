@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/helmunittest/helm-unittest/tags/
-HELM_UNITTEST_IMAGE ?= docker.io/helmunittest/helm-unittest:3.14.4-0.5.0
+HELM_UNITTEST_IMAGE ?= docker.io/helmunittest/helm-unittest:4.2.0-1.1.1
 HELM_DOCS_IMAGE ?= docker.io/jnorwood/helm-docs:latest
 
 PWD=$(shell pwd)
